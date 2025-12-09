@@ -26,8 +26,17 @@ console.log('[SYSTEM] Menyiapkan WhatsApp Client...');
 const client = new Client({
     authStrategy: new LocalAuth(),
     puppeteer: {
-        headless: false, // Ubah true jika tidak ingin browser Chrome muncul
-        args: ['--no-sandbox', '--disable-setuid-sandbox']
+        headless: false, // Jendela browser akan muncul
+        executablePath: 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe', // OPSI: Gunakan Chrome asli laptop (lebih stabil)
+        args: [
+            '--no-sandbox',
+            '--disable-setuid-sandbox',
+            '--disable-dev-shm-usage', // Mencegah crash memori
+            '--disable-accelerated-2d-canvas',
+            '--no-first-run',
+            '--no-zygote',
+            '--disable-gpu' // Matikan GPU agar enteng
+        ]
     }
 });
 

@@ -97,7 +97,7 @@ function sendNotification(label, score) {
     lastRequestTime = now;
     log(`⚠️ Mendeteksi ${label}. Mengirim sinyal ke server...`);
 
-    fetch('/notify', {
+    fetch('http://localhost:3000/notify', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ label: label, score: score })
