@@ -27,7 +27,6 @@ const client = new Client({
     authStrategy: new LocalAuth(),
     puppeteer: {
         headless: false, // Jendela browser akan muncul
-        executablePath: 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe', // OPSI: Gunakan Chrome asli laptop (lebih stabil)
         args: [
             '--no-sandbox',
             '--disable-setuid-sandbox',
